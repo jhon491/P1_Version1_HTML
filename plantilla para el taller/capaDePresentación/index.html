@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Agendamiento de citas médicas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+  <div id="notificaciones" class="notificaciones-contenedor"></div>
+
+  <header class="header-academico">
+    <h1>Sistema de Agendamiento de Citas Médicas</h1>
+    <p>Universidad del Cauca</p>
+    <p>Laboratorio 3 — JavaScript - Manejo del DOM - Arquitectura en Capas</p>
+    
+    <!-- Redes sociales y enlaces en el Header -->
+    <div class="header-redes mt-3">
+      <a href="https://www.unicauca.edu.co" target="_blank" class="text-white text-decoration-none me-3" title="Sitio Web Oficial">
+        <i class="fas fa-globe me-1"></i> www.unicauca.edu.co
+      </a>
+      <a href="https://facebook.com" target="_blank" class="text-white me-2" title="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="https://twitter.com" target="_blank" class="text-white me-2" title="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+      <a href="https://instagram.com" target="_blank" class="text-white me-2" title="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+      <a href="https://linkedin.com" target="_blank" class="text-white" title="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
+    </div>
+  </header>
+
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+      data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#seccion1-carouselProductos">Sección 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#seccion2-medicos">Sección 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#seccion3-registro">Sección 3</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sección 1: Carrusel -->
+  <div class="container mt-4">
+
+    <div id="seccion1-carouselProductos" class="carousel slide mb-4" data-bs-ride="carousel">
+
+        <h3 class="text-center mb-3">Sección 1: Promociones</h3>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="imagenes/promo1.jpg" class="d-block w-100" alt="Promo 1">
+            </div>
+            <div class="carousel-item">
+                <img src="imagenes/promo2.jpg" class="d-block w-100" alt="Promo 2">
+            </div>
+            <div class="carousel-item">
+                <img src="imagenes/promo3.png" class="d-block w-100" alt="Promo 3">
+            </div>
+        </div>
+
+        <!-- Controles del carrusel -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#seccion1-carouselProductos" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#seccion1-carouselProductos" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+  </div>
+
+  <br>
+
+  <!-- Seccion 2: Medicos de la clinica  -->
+  <!-- Cuerpo principal con barra lateral y productos -->
+  <div id="seccion2-medicos" class="row">
+
+    <h3 class="text-center mb-3">Sección 2: Médicos</h3>
+    <br>
+    <br>
+    <br>
+
+    <!-- Barra lateral (Categorías) -->
+    <aside class="col-12 col-sm-2 col-md-4">
+        <h2>Especialidades</h2>
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action text-primary text-center" onclick="document.getElementById('texto-info').innerText='La Terapia Neural regula el sistema nervioso mediante anestésicos locales'; return false;">Terapia Neural</a>
+            <a href="#" class="list-group-item list-group-item-action text-primary text-center" onclick="document.getElementById('texto-info').innerText='La Quiropraxia se enfoca en el diagnóstico y tratamiento de trastornos neuromusculoesqueléticos'; return false;">Quiropraxia</a>
+            <a href="#" class="list-group-item list-group-item-action text-primary text-center" onclick="document.getElementById('texto-info').innerText='La Fisioterapia ayuda a restaurar el movimiento y la función afectada por una lesión o enfermedad'; return false;">Fisioterapia</a>
+            <a href="#" class="list-group-item list-group-item-action text-primary text-center" onclick="document.getElementById('texto-info').innerText='La Nutrición y Dietética adapta la alimentación para tratar o mejorar ciertas condiciones de salud'; return false;">Nutrición y Dietética</a>
+            <a href="#" class="list-group-item list-group-item-action text-primary text-center" onclick="document.getElementById('texto-info').innerText='La Pediatría involucra la atención médica de bebés, niños y adolescentes'; return false;">Pediatría</a>
+            <a href="#" class="list-group-item list-group-item-action text-primary text-center" onclick="document.getElementById('texto-info').innerText='La Cardiología es el estudio y tratamiento de los trastornos del corazón'; return false;">Cardiología</a>
+            <a href="#" class="list-group-item list-group-item-action text-primary text-center" onclick="document.getElementById('texto-info').innerText='La Dermatología se especializa en enfermedades de la piel, cabello y uñas'; return false;">Dermatología</a>
+        </div>
+
+        <!-- Contenedor vacio, donde se coloca el texto-->
+        <div id="texto-info" class="mt-3 text-muted" style="min-height: 50px;"></div>
+
+    </aside>
+
+    <!-- Sección de médicos -->
+    <main class="col-12 col-sm-10 col-md-8">
+        <h2>Médicos</h2>
+        <div class="row g-3">
+            
+            <!-- Medico 1 -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 border">
+                    <img src="./imagenes/medico1.png" class="card-img-top img-fluid" alt="Juliana Montenegro Ruiz">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Juliana Montenegro Ruiz</h5>
+                        <h6 class="card-subtitle mb-2 text-muted text-center">Pediatra</h6>
+                        <p class="card-text mb-1"><small><strong>Subespecialidad:</strong> Neonatología</small></p>
+                        <br>
+                        <p class="card-text flex-grow-1">Mi motivación es asegurar que cada niño tenga un comienzo de vida saludable y feliz</p>
+                        <a href="#agendar-cita" class="btn btn-primary mt-auto w-100">Agendar Cita</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medico 2 -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 border">
+                    <img src="./imagenes/medico2.png" class="card-img-top img-fluid" alt="Alejandro Ramirez Valencia">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Alejandro Ramirez Valencia</h5>
+                        <h6 class="card-subtitle mb-2 text-muted text-center">Médico General</h6>
+                        <p class="card-text mb-1"><small><strong>Subespecialidad:</strong> Terapia Neural</small></p>
+                        <br>
+                        <p class="card-text flex-grow-1">Creo en la capacidad del cuerpo para sanar de forma natural y compasiva</p>
+                        <a href="#agendar-cita" class="btn btn-primary mt-auto w-100">Agendar Cita</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medico 3 -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 border">
+                    <img src="./imagenes/medico3.png" class="card-img-top img-fluid" alt="Mariana Torrez Valencia">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Mariana Torrez Valencia</h5>
+                        <h6 class="card-subtitle mb-2 text-muted text-center">Psicóloga Clínica</h6>
+                        <p class="card-text mb-1"><small><strong>Subespecialidad:</strong> Terapia Cognitivo-Conductual</small></p>
+                        <br>
+                        <p class="card-text flex-grow-1">Acompañar a mis pacientes hacia el bienestar mental y emocional es mi vocación</p>
+                        <br>
+                        <a href="#agendar-cita" class="btn btn-primary mt-auto w-100">Agendar Cita</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medico 4 -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 border">
+                    <img src="./imagenes/medico4.png" class="card-img-top img-fluid" alt="Gabriela Navarro Quintero">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Gabriela Navarro Quintero</h5>
+                        <h6 class="card-subtitle mb-2 text-muted text-center">Cardióloga</h6>
+                        <p class="card-text mb-1"><small><strong>Subespecialidad:</strong> Ecocardiografía</small></p>
+                        <br>
+                        <p class="card-text flex-grow-1">Me dedico a cuidar el corazón con prevención, precisión y profunda empatía</p>
+                        <a href="#agendar-cita" class="btn btn-primary mt-auto w-100">Agendar Cita</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medico 5 -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 border">
+                    <img src="./imagenes/medico5.png" class="card-img-top img-fluid" alt="Mauricio Cabrera Ortiz">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Mauricio Cabrera Ortiz</h5>
+                        <h6 class="card-subtitle mb-2 text-muted text-center">Fisioterapeuta</h6>
+                        <p class="card-text mb-1"><small><strong>Subespecialidad:</strong> Rehabilitación Deportiva</small></p>
+                        <br>
+                        <p class="card-text flex-grow-1">Devolver la movilidad y mejorar la calidad de vida es mi mayor satisfacción</p>
+                        <br>
+                        <a href="#agendar-cita" class="btn btn-primary mt-auto w-100">Agendar Cita</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medico 6 -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 border">
+                    <img src="./imagenes/medico6.png" class="card-img-top img-fluid" alt="Carlos Mendoza Salas">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Carlos Mendoza Salas</h5>
+                        <h6 class="card-subtitle mb-2 text-muted text-center">Dermatólogo</h6>
+                        <p class="card-text mb-1"><small><strong>Subespecialidad:</strong> Dermatología Oncológica</small></p>
+                        <br>
+                        <p class="card-text flex-grow-1">Mi compromiso es cuidar tu piel y mejorar la confianza de mis pacientes</p>
+                        <br>
+                        <a href="#agendar-cita" class="btn btn-primary mt-auto w-100">Agendar Cita</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+  </div>
+
+  <br>
+  <!-- Sección 3: Formularios de registro -->
+  <div id="seccion3-registro" class="container my-5">
+    <h3 class="text-center mb-4">Sección 3: Registrar nuevos usuarios</h3>
+
+    <!-- Formulario Registrar Paciente -->
+    <div class="card p-4 mb-4 shadow-sm">
+      <h2 class="text-center mb-4 lead fw-bold">Registrar Paciente</h2>
+      <form id="formPaciente" onsubmit="return validarFormulario()">
+
+        <div class="mb-4">
+          <label for="identificacionPaciente" class="form-label">Tipo de Identificación:</label>
+          <select id="identificacionPaciente" class="form-control" required>
+            <option value="" disabled selected>Seleccione un tipo de identificación</option>
+            <option value="cc">Cédula de Ciudadanía</option>
+            <option value="ti">Tarjeta de Identidad</option>
+            <option value="ce">Cédula de Extranjería</option>
+            <option value="pas">Pasaporte</option>
+          </select>
+          <span class="form-text text-danger" id="errorTipoIdentificacionPaciente"></span>
+        </div>
+
+        <div class="mb-4">
+          <label for="numero-identificacionPaciente" class="form-label">Número de Identificación:</label>
+          <input type="text" id="numero-identificacionPaciente" class="form-control" placeholder="Número de identificación" required>
+          <span class="form-text text-danger" id="errorNumeroIdentificacionPaciente"></span>
+        </div>
+
+        <div class="mb-4">
+          <label for="nombresPaciente" class="form-label">Nombres:</label>
+          <input type="text" id="nombresPaciente" class="form-control" placeholder="Nombres" required>
+          <span class="form-text text-danger" id="errorNombresPaciente"></span>
+        </div>
+
+        <div class="mb-4">
+          <label for="apellidosPaciente" class="form-label">Apellidos:</label>
+          <input type="text" id="apellidosPaciente" class="form-control" placeholder="Apellidos" required>
+          <span class="form-text text-danger" id="errorApellidosPaciente"></span>
+        </div>
+
+        <div class="mb-4">
+          <label for="correo-electronico" class="form-label">Correo Electrónico:</label>
+          <input type="email" id="correo-electronico" class="form-control" placeholder="Correo electrónico" required>
+          <span class="form-text text-danger" id="errorCorreo"></span>
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label d-block">Género:</label>
+          <div class="d-flex justify-content-start">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="femenino" name="genero" value="femenino" required>
+              <label class="form-check-label" for="femenino">Femenino</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="masculino" name="genero" value="masculino" required>
+              <label class="form-check-label" for="masculino">Masculino</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="otro" name="genero" value="otro" required>
+              <label class="form-check-label" for="otro">Otro</label>
+            </div>
+          </div>
+          <span class="form-text text-danger" id="errorGenero"></span>
+        </div>
+
+        <button type="submit" id="btnAgregarPaciente" class="btn btn-primary" disabled>Agregar Paciente</button>
+      </form>
+    </div>
+
+    <!-- Formulario Registrar Médico -->
+    <div class="card p-4 mb-4 shadow-sm">
+      <h2 class="text-center mb-4 lead fw-bold">Registrar Médico</h2>
+      <form id="formMedico" onsubmit="return validarFormulario()">
+
+        <div class="mb-4">
+          <label for="identificacionMedico" class="form-label">Tipo de Identificación:</label>
+          <select id="identificacionMedico" class="form-control" required>
+            <option value="" disabled selected>Seleccione un tipo de identificación</option>
+            <option value="cc">Cédula de Ciudadanía</option>
+            <option value="ti">Tarjeta de Identidad</option>
+            <option value="ce">Cédula de Extranjería</option>
+            <option value="pas">Pasaporte</option>
+          </select>
+          <span class="form-text text-danger" id="errorTipoIdentificacionMedico"></span>
+        </div>
+
+        <div class="mb-4">
+          <label for="numero-identificacionMedico" class="form-label">Número de Identificación:</label>
+          <input type="text" id="numero-identificacionMedico" class="form-control" placeholder="Número de identificación" required>
+          <span class="form-text text-danger" id="errorNumeroIdentificacionMedico"></span>
+        </div>
+
+        <div class="mb-4">
+          <label for="nombresMedico" class="form-label">Nombres:</label>
+          <input type="text" id="nombresMedico" class="form-control" placeholder="Nombres" required>
+          <span class="form-text text-danger" id="errorNombresMedico"></span>
+        </div>
+
+        <div class="mb-4">
+          <label for="apellidosMedico" class="form-label">Apellidos:</label>
+          <input type="text" id="apellidosMedico" class="form-control" placeholder="Apellidos" required>
+          <span class="form-text text-danger" id="errorApellidosMedico"></span>
+        </div>
+
+        <div class="mb-4">
+          <label for="especialidadMedico" class="form-label">Especialidad:</label>
+          <input type="text" id="especialidadMedico" class="form-control" placeholder="Especialidad" required>
+          <span class="form-text text-danger" id="errorEspecialidadMedico"></span>
+        </div>
+
+        <div class="mb-4">
+          <label for="horarioAtencionMedico" class="form-label">Horario de Atención:</label>
+          <input type="text" id="horarioAtencionMedico" class="form-control" placeholder="Horario de Atención" required>
+          <span class="form-text text-danger" id="errorHorarioAtencionMedico"></span>
+        </div>
+
+        <div class="mb-4">
+          <label for="aniosExperienciaMedico" class="form-label">Años de Experiencia:</label>
+          <input type="number" id="aniosExperienciaMedico" class="form-control" placeholder="Años de Experiencia" required>
+          <span class="form-text text-danger" id="errorAniosExperienciaMedico"></span>
+        </div>
+
+        <div class="mb-4">
+          <label for="bibliografiaMedico" class="form-label">Bibliografía:</label>
+          <input type="text" id="bibliografiaMedico" class="form-control" placeholder="Bibliografía" required>
+        </div>
+
+        <button type="submit" id="btnAgregarMedico" class="btn btn-primary" disabled>Agregar Médico</button>
+      </form>
+    </div>
+
+    <!-- Formulario Registrar Citas Médicas -->
+    <div class="card p-4 mb-4 shadow-sm">
+      <h2 id="agendar-cita" class="text-center mb-4 lead fw-bold">Registrar Citas Médicas</h2>
+      <form id="formCitas">
+
+        <div class="mb-4">
+          <label for="fecha" class="form-label">Fecha</label>
+          <input type="date" id="fecha" class="form-control" required>
+        </div>
+
+        <div class="mb-4">
+          <label for="horaInicio" class="form-label">Hora Inicio</label>
+          <input type="time" id="horaInicio" class="form-control" required>
+        </div>
+
+        <div class="mb-4">
+          <label for="horaFin" class="form-label">Hora Fin</label>
+          <input type="time" id="horaFin" class="form-control" required>
+        </div>
+
+        <div class="mb-4">
+          <label for="medicoSelect" class="form-label">Médico</label>
+          <select id="medicoSelect" class="form-control" required></select>
+        </div>
+
+        <div class="mb-4">
+          <label for="pacienteSelect" class="form-label">Paciente</label>
+          <select id="pacienteSelect" class="form-control" required></select>
+        </div>
+
+        <button type="submit" id="btnAgregarCita" class="btn btn-primary" disabled>Agregar Cita</button>
+      </form>
+    </div>
+
+    <!-- Tabla de Citas Registradas -->
+    <h2 class="text-center mb-4 lead fw-bold">Citas Registradas</h2>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered align-middle">
+        <thead class="table-primary text-center">
+          <tr>        
+            <th>Fecha</th>
+            <th>Hora Inicio</th>
+            <th>Hora Fin</th>        
+            <th>Médico</th>
+            <th>Paciente</th>
+          </tr>
+        </thead>
+        <tbody id="tablaCitas"></tbody>
+      </table>
+    </div>
+  </div>
+
+  
+
+  <footer class="footer-academico">
+    <!-- Redes sociales en el Footer -->
+    <div class="footer-redes mb-3">
+      <a href="https://facebook.com" target="_blank" class="red-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com" target="_blank" class="red-icon" title="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank" class="red-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com" target="_blank" class="red-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com" target="_blank" class="red-icon" title="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+
+    <p>Ingeniería del Software III — Ejemplo de arquitectura en capas</p>
+    <p>&copy; 2026 Universidad del Cauca. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Archivos JS -->
+  <!-- 1. Entidades -->
+  <script src="../capaDeAccesoADatos/entitys/Medico.js"></script>
+  <script src="../capaDeAccesoADatos/entitys/Paciente.js"></script>
+  <script src="../capaDeAccesoADatos/entitys/Cita.js"></script>
+
+  
+  <!-- 2. Repositorios -->
+  <script src="../capaDeAccesoADatos/repositorios/MedicoRepository.js"></script>
+  <script src="../capaDeAccesoADatos/repositorios/PacienteRepository.js"></script>
+  <script src="../capaDeAccesoADatos/repositorios/CitaRepository.js"></script>
+ 
+  <!-- 3. Fachadas -->
+  <script src="../fachadaServices/gestionarMedicosServices.js"></script>
+  <script src="../fachadaServices/gestionarPacientesServices.js"></script>
+  <script src="../fachadaServices/gestionarCitasServices.js"></script>
+
+  <!-- 4. Vista (estos sí están en la misma carpeta que index.html) -->
+  <script src="notificaciones.js"></script>
+  <script src="logicaMedico.js"></script>
+  <script src="logicaPaciente.js"></script>
+  <script src="logicaCita.js"></script>
+
+  <!-- Validación -->
+  <script src="validacion.js"></script>
+
+  <!-- Bootstrap CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+</body>
+</html>
